@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+{% block body %}
+  {% if session.logged_in %}
+    <form action="{{ url_for('add_entry') }}" method=post class=add-entry>
+      <dl>
+        <dt>Folder:
+        <dd><input type=text size=30 name=Folder>
+        <dt>Password:
+        <dd><input type=text size=30 name=Password>
+        <dt>Hostnames:
+        <dd><input type=text size=30 name=Hostnames>
+        <dt>Receivers:
+        <dd><input type=text size=30 name=Receivers>
+        <dd><input type=submit value=Share>
+      </dl>
+    </form>
+  {% endif %}
+  <ul class=entries>
+  {% for entry in entries %}
+  {{ entry.Folder }} {{ entry.Password}} {{ entry.Hostnames }} {{ entry.Receivers }}
+  {% else %}
+    <li><em>Unbelievable.  No entries here so far</em>
+  {% endfor %}
+  </ul>
+{% endblock %}

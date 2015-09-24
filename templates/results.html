@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+<head>
+<style>
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+th, td {
+  padding: 5px;
+}
+</style>
+</head>
+<body>
+
+{% if dir %}
+<table style="width:100%">
+  <tr>
+    <th>Dossier</th>
+    <th>Mot de passe</th>		
+    <th>Destination(s)</th>
+  </tr>
+  <tr>
+  <tr>
+    <th>{{ dir }}</th>
+    <th>{{ password }}</th>
+    <th>{{ hostnames }}</th>
+  </tr>
+</table>
+    
+{% else %}
+  <h1>No Directory set</h1>
+{% endif %}
+
+</body>
+</html>
+
