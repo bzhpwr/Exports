@@ -4,15 +4,14 @@ h1, h2          { font-family: 'Georgia', serif; margin: 0; }
 h1              { border-bottom: 2px solid #eee; text-align:center; }
 h2              { font-size: 1.2em; }
 
-.page           { margin: 2em auto; width: 35em; border: 5px solid #ccc;
+.page           { margin: 2em auto; border: 5px solid #ccc;
                   padding: 0.8em; background: white; }
 .entries        { list-style: none; margin: 0; padding: 0; }
 .entries li     { margin: 0.8em 1.2em; }
 .entries li h2  { margin-left: -1em; }
-.tableau table, th, td, tr { border: 2px solid #eee; border-width: 2px; margin: 1px ;}
+.tableau table, th, td, tr { width: 100%; border: 2px solid #eee; border-width: 2px; margin: 1px ;}
 .tableau th, td { padding: 5px; } 
-.tableau th     { color: #377ba8; } 
-.tableau table  { width:"100%"; }
+.tableau th     { color: #377ba8; height: 50px; } 
 .add-entry      { font-size: 0.9em; border-bottom: 1px solid #ccc; }
 .add-entry dl   { font-weight: bold; }
 .metanav        { text-align: right; font-size: 1.2em; padding: 0.3em;

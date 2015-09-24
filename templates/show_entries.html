@@ -27,7 +27,7 @@
       <th></th>
     </tr>
   <form action="{{ url_for('del_entry') }}" method=post class=add-entry > 
-  <input type=Submit value="Supprimer le dossier">
+  <input type=Submit value="Supprimer le dossier" >
   {% for entry in entries %}
     <tr>
       <td>{{ entry.Folder }}</td> 
@@ -40,7 +40,7 @@
     </tr>
   {% endfor %}
 </table>
-  <input type=Submit value="Supprimer le dossier">
+  <input type=Submit value="Supprimer le dossier" >
   </form>
   {% endif %}
 {% endblock %}
