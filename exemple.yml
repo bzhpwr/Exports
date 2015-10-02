@@ -1,0 +1,9 @@
+Bin:
+  password: secret_password
+  hostnames: machine1,machine2
+  receivers: test@test,test2@test2
+
+Data:
+  password: secret_pass
+  hostnames: machine3,machine4
+  receivers: test3@test,test4@test

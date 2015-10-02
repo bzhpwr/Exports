@@ -89,6 +89,7 @@ def add_entry():
     cur = g.db.execute('select Folder from entries')
     entries = [dict(Folder=row[0]) for row in cur.fetchall()]
     if any(d['Folder'] == request.form['Folder'] for d in entries) is not True:
+      #d_insert = 
       g.db.execute('insert into entries (Folder, Password, Hostnames, Receivers ) values (?, ?, ?, ?)', [request.form['Folder'], request.form['Password'], request.form['Hostnames'], request.form['Receivers']])
       g.db.commit()
       flash('New entry was successfully posted')
