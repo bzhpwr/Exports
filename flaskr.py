@@ -1,4 +1,4 @@
-import sqlite3, os, pprint
+import sqlite3, os, pprint, yaml
 from contextlib import closing
 from flask import Flask, request, session, g, redirect, url_for, abort, render_template, flash
 
@@ -32,6 +32,16 @@ def connect_db():
     rv.row_factory = sqlite3.Row
     return rv
 
+def import_datas():
+  f = open('exemple.yml')
+  d_folders = yaml.load(f)
+  f.close()
+
+def write_datas(d_datas):
+  #f = open('exemple.yml', 'a')
+  with open('exemple.yml', 'w') as outfile:
+        outfile.write( yaml.dump(d_datas, default_flow_style=False) )
+  
 #def init_db():
 #  with closing(connect_db()) as db:
 #    with app.open_resource('./schema.sql', mode='r') as f:

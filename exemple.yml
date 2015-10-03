@@ -1,9 +1,15 @@
-Bin:
-  password: secret_password
-  hostnames: machine1,machine2
-  receivers: test@test,test2@test2
-
-Data:
-  password: secret_pass
-  hostnames: machine3,machine4
-  receivers: test3@test,test4@test
+127100f2-9e0a-4218-a41a-20abf80f96af:
+  Folder: sbin
+  Hostnames: aa
+  Password: aa
+  Receivers: aa@aa
+90df59c9-0620-43d4-ab67-898d79d759a2:
+  Folder: bin
+  Hostnames: oo
+  Password: oo
+  Receivers: oo@oo
+e1df8e1e-2e7f-4a2b-a806-01ea334ef53c:
+  Folder: games
+  Hostnames: aa
+  Password: aa
+  Receivers: aa@aa

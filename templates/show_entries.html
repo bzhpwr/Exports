@@ -9,8 +9,8 @@
         <dd><option value="{{ line }}">{{ line }}</option>
         {% endfor %}
         </select>
-        <dt>Mot de passe:
-        <dd><input type=password size=16 name=Password required>
+        <dt>Mot de passe: <input type=password size=16 name=Password required>
+        {# <dd><input type=password size=16 name=Password required> #}
         <dt>Destination(s): Separer par des virgules
         <dd><input type=text size=30 name=Hostnames multiple required>
         <dt>Email(s): Separer par des virgules
@@ -27,20 +27,20 @@
       <th></th>
     </tr>
   <form action="{{ url_for('del_entry') }}" method=post class=add-entry > 
-  <input type=Submit value="Supprimer le dossier" >
-  {% for entry in entries %}
+  <input type=Submit value="Retirer le dossier selectionner" >
+  {% for key,entry in d_folders.items() %}
     <tr>
       <td>{{ entry.Folder }}</td> 
-      <td>{{ entry.Password}}</td>
+      <td>{{ entry.Password }}</td>
       <td>{{ entry.Hostnames }}</td>
       <td>{{ entry.Receivers }}</td>
       {# <form action="{{ url_for('del_entry') }}" method=post class=add-entry > #}
-      <td><input type=radio name="Fid" value={{ entry.Fid }}></td> 
+      <td><input type=radio name="Folder" value={{ key }}></td> 
       {# </form> #}
     </tr>
   {% endfor %}
 </table>
-  <input type=Submit value="Supprimer le dossier" >
+  <input type=Submit value="Retirer le dossier selectionner" >
   </form>
   {% endif %}
 {% endblock %}

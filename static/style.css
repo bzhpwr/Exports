@@ -11,7 +11,7 @@ h2              { font-size: 1.2em; }
 .entries li h2  { margin-left: -1em; }
 .tableau table, th, td, tr { width: 100%; border: 2px solid #eee; border-width: 2px; margin: 1px ;}
 .tableau th, td { padding: 5px; } 
-.tableau th     { color: #377ba8; height: 50px; } 
+.tableau th     { color: #377ba8; height: 10px; } 
 .add-entry      { font-size: 0.9em; border-bottom: 1px solid #ccc; }
 .add-entry dl   { font-weight: bold; }
 .metanav        { text-align: right; font-size: 1.2em; padding: 0.3em;
