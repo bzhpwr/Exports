@@ -1,29 +1,19 @@
-import sqlite3, os, pprint, yaml, uuid
+import os, yaml, uuid
 from contextlib import closing
 from flask import Flask, request, session, g, redirect, url_for, abort, render_template, flash
+from Crypto.Hash import SHA256
 
 app = Flask(__name__)
 
 app.config.update(dict(
-#    DATABASE=os.path.join(app.root_path, 'flaskr.db'),
     DEBUG=True,
     SECRET_KEY='development key',
     USERNAME='admin',
+    #PASSWORD='\x8civ\xe5\xb5A\x04\x15\xbd\xe9\x08\xbdM\xee\x15\xdf\xb1g\xa9\xc8s\xfcK\xb8\xa8\x1fo*\xb4H\xa9\x18'
     PASSWORD='admin'
 ))
 
-# create our little application :)
-#app.config.from_object(__name__)
 app.config.from_envvar('FLASKR_SETTINGS', silent=True)
-
-#def connect_db():
-#  return sqlite3.connect(app.config['DATABASE'])
-
-"""Connects to the specific database."""
-#def connect_db():
-#    rv = sqlite3.connect(app.config['DATABASE'])
-#    rv.row_factory = sqlite3.Row
-#    return rv
 
 def import_datas():
   f = open('./exemple.yml')
@@ -54,7 +44,12 @@ def add_entry():
       flash('This folder already exist in list')
     else:
       Folder_id = uuid.uuid4()
-      d_folders[str(Folder_id)] = { 'Folder':str(request.form['Folder']), 'Password':str(request.form['Password']), 'Hostnames':str(request.form['Hostnames']), 'Receivers':str(request.form['Receivers']) }
+      d_folders[str(Folder_id)] = { 
+          'Folder':str(request.form['Folder']), 
+          'Password':str(request.form['Password']), 
+          'Hostnames':str(request.form['Hostnames']), 
+          'Receivers':str(request.form['Receivers']) 
+      }
       write_datas(d_folders)
       flash('New entry was successfully posted')
     return redirect(url_for('show_entries'))
@@ -77,6 +72,7 @@ def del_entry():
 def login():
     error = None
     if request.method == 'POST':
+        print('User: %s login with password: %s' % (request.form['username'], request.form['password'])) 
         if request.form['username'] != app.config['USERNAME'] or request.form['password'] != app.config['PASSWORD']:
             error = 'Invalid Credentials'
         else:

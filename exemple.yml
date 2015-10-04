@@ -1,13 +1,28 @@
-127100f2-9e0a-4218-a41a-20abf80f96af:
-  Folder: sbin
+292f1baa-38a9-43ab-88f2-cc6e9977c2b7:
+  Folder: src
+  Hostnames: machine1,machine2,machine3,machine4,machine5
+  Password: ppp
+  Receivers: test@test,test@test
+91b4b1c8-74da-4d6a-bfff-8324840b83c1:
+  Folder: bin
+  Hostnames: aa
+  Password: ppp
+  Receivers: aa@aa
+9664cf63-15fa-47e9-8f4d-3808fa2d86db:
+  Folder: libexec
+  Hostnames: lib
+  Password: lib
+  Receivers: lin@lib
+a6bca76f-3b0a-4e81-bb47-ad2489459ddd:
+  Folder: share
   Hostnames: aa
   Password: aa
   Receivers: aa@aa
-90df59c9-0620-43d4-ab67-898d79d759a2:
-  Folder: bin
-  Hostnames: oo
-  Password: oo
-  Receivers: oo@oo
+aff25471-906f-4d6d-977f-dfdabd09d69b:
+  Folder: include
+  Hostnames: machine1,machine2,machine3,machine4,machine5
+  Password: cahpeau
+  Receivers: email@test
 e1df8e1e-2e7f-4a2b-a806-01ea334ef53c:
   Folder: games
   Hostnames: aa
